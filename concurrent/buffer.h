@@ -25,7 +25,6 @@ void Buffer<T>::push(T value){
     checkBuf.notify_one();
 }
 
-// Blocking operation
 template <typename T>
 T Buffer<T>::pop(){
     std::unique_lock<std::mutex> lck(changingBuf);
